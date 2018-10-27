@@ -14,7 +14,8 @@ class Analytics extends PureComponent {
         ageLabels: [],
         ageNums: [],
         ageData: [],
-        partData: []
+        partData: [],
+        activityDate: []
 
     };
 
@@ -74,6 +75,32 @@ class Analytics extends PureComponent {
                     }]
                 });
         });
+
+
+        axios.get('http://localhost:3001/analytics/activity').then((res) => {
+
+            const walking = res.data.walking;
+            const sports = res.data.sports;
+            const leisure = res.data.leisure;
+            const eat = res.data.eat;
+
+
+            this.setState({
+                activityDate: [{
+                    value: walking,
+                    label: 'Walking'
+                }, {
+                    value: sports,
+                    label: 'Sports'
+                }, {
+                    value: leisure,
+                    label: 'Leisure'
+                }, {
+                    value: eat,
+                    label: 'Eat'
+                }]
+            });
+        });
     }
 
     render() {
@@ -97,13 +124,8 @@ class Analytics extends PureComponent {
                 </Row>
                 <Row>
                     <Col className={'text-center'} md={6}>
-                        <h3 >Activity Demographics</h3>
-                        <BarChart data={{
-                            labels: this.state.ageLabels, datasets: [{
-                                label: 'Age',
-                                data: this.state.ageNums
-                            }]
-                        }}/>
+                        <h3 className={'text-center'}>Activity Demographics</h3>
+                        <PolarAreaChart data={this.state.activityDate}/>
                     </Col>
                     <Col className={'text-center'} md={6}>
                         <h3 className={'text-center'}>Location Demographics</h3>

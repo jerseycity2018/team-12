@@ -73,4 +73,33 @@ router.get('/part', function (req, res, next) {
     });
 });
 
+
+router.get('/activity', function (req, res, next) {
+    Survey.find({}).then(function (users) {
+        let walking = 0;
+        let sports = 0;
+        let eat = 0;
+        let leisure = 0;
+
+        users.forEach((user) => {
+            if (user.activity === 'walking') {
+                walking++;
+            } else if (user.activity === 'sports'){
+                sports++;
+            } else if (user.activity === 'eat'){
+                eat++;
+            } else {
+                leisure++;
+            }
+        });
+
+        res.send({
+            walking,
+            sports,
+            eat,
+            leisure
+        });
+    });
+});
+
 module.exports = router;

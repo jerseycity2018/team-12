@@ -9,11 +9,16 @@ const User = mongoose.model('user', {
     location: {lat: Number, long: Number}
 });
 
-const Survey =  mongoose.model('survey', {
+const Survey = mongoose.model('survey', {
     age: Number,
     gender: String,
     outOfState: Boolean,
     activity: String,
     firstTime: Boolean,
-    part: String
+    part: String,
+    location: {
+        lat: Number,
+        long: Number
+    },
+    date: mongoose.Schema.Types.Date
 });
