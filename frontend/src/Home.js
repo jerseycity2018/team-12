@@ -20,7 +20,7 @@ class Home extends Component {
     return (
 
         <div>
-          <h2>Survey</h2>
+          <h2>Help Us Make Your Experience Better:</h2>
         <form onSubmit={this.handleSubmit}>
         <Question questionText="Gender:"/>
          <ul>
