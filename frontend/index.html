@@ -18,6 +18,10 @@
     <body>
         <script src="https://d3js.org/d3.v5.min.js"></script>
         <script type="text/javascript" href="cpcsolution/src/App.js"></script>
+        <script type="text/javascript" href="cpcsolution/src/App.test.js"></script>
+        <script type="text/javascript" href="cpcsolution/src/Custom.js"></script>
+        <script type="text/javascript" href="cpcsolution/src/index.js"></script>
+        <script type="text/javascript" href="cpcsolution/src/serviceWorker.js"></script>
 
         <h3>Data Visualization Testing...</h3>
         <script type="text/javascript">
@@ -42,6 +46,17 @@
             .tickSize(-width)
             .tickFormat(function(d){ return Math.round(d/1e6) + "M"; });
         
+        // An SVG element with a bottom-right origin
+        var svg = d3.select("body").append("svg")
+            .attr("width", width+margin.left+margin.right)
+            .attr("height", height + margin.top + margin.bottom)
+            .append("g")
+            .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+            
+        // A sliding container to hold the bars by user age
+        var ages = svg.append("g")
+            .attr("class", "ages");
+
         
 
         </script>
