@@ -18,7 +18,7 @@ class Main extends Component {
                 <div className={'navbar'}>
                     <h1>The Central Solution</h1>
                     <ul className="header">
-                        <li><NavLink to="/">Home</NavLink></li>
+                        <li><NavLink exact to="/">Home</NavLink></li>
                         <li><NavLink to="/experiences">Experiences</NavLink></li>
                         <li><NavLink to="/donate">Donate</NavLink></li>
                         <li><NavLink to="/analytics">Analytics</NavLink></li>
