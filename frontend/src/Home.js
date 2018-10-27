@@ -37,14 +37,14 @@ class Home extends Component {
           <li><input onChange={this.handleInputChange.bind(this)} type="radio" name="age" value="senior" />53-65+</li>
         </ul>
 
-        <Question questionText="Where are you coming from?"/>
+        <Question questionText="Residency:"/>
          <ul>
           <li><input onChange={this.handleInputChange.bind(this)} type="radio" name="origin" value="ny" />New York</li>
           <li><input onChange={this.handleInputChange.bind(this)} type="radio" name="origin" value="notNy" />Not New York</li>
         </ul>
 
 
-         <Question questionText="What did you do in the park?"/>
+         <Question questionText="Reason for visit:"/>
          <ul>
           <li><input onChange={this.handleInputChange.bind(this)} type="checkbox" name="activity" value="leisure" />Leisure</li>
           <li><input onChange={this.handleInputChange.bind(this)} type="checkbox" name="activity" value="walking_dog" />Walking my dog</li>
@@ -52,13 +52,13 @@ class Home extends Component {
           <li><input onChange={this.handleInputChange.bind(this)} type="checkbox" name="activity" value="events" />Park Events</li>
           </ul>
 
-         <Question questionText="Was it your first time in the park?"/>
+         <Question questionText="Frequent visitor:"/>
          <ul>
           <li><input onChange={this.handleInputChange.bind(this)} type="radio" name="freq" value="yes" />Yes</li>
           <li><input onChange={this.handleInputChange.bind(this)} type="radio" name="freq" value="no" />No</li>
         </ul>
 
-         <Question questionText="What part of the park did you visit?"/>
+         <Question questionText="Area of the park that was visited:"/>
          <ul>
           <li><input onChange={this.handleInputChange.bind(this)} type="radio" name="location" value="north" />North</li>
           <li><input onChange={this.handleInputChange.bind(this)} type="radio" name="location" value="south" />South</li>
