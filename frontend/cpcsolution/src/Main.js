@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import { BrowserRouter as Router } from 'react-router-dom';
+import './main.css';
 import {
   Route,
   NavLink,
@@ -13,7 +15,8 @@ class Main extends Component {
     return (
       <HashRouter>
         <div>
-          <h1>Simple SPA</h1>
+
+           <h1>Visit Central Park!</h1>
           <ul className="header">
             <li><NavLink to="/">Home</NavLink></li>
             <li><NavLink to="/experiences">Experiences</NavLink></li>
