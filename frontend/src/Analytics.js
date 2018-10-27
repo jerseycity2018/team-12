@@ -1,6 +1,8 @@
 import React, {PureComponent} from 'react';
 import {Col, Grid, Row} from 'react-bootstrap';
 import axios from 'axios';
+import { Map, Marker, Popup, TileLayer } from 'react-leaflet';
+import HeatmapLayer from 'react-leaflet-heatmap-layer/src/HeatmapLayer';
 
 const PieChart = require("react-chartjs").Pie;
 const BarChart = require("react-chartjs").Bar;
@@ -107,12 +109,12 @@ class Analytics extends PureComponent {
         return (
             <Grid>
                 <Row>
-                    <Col className={'text-center'}md={6}>
+                    <Col className={'text-center'}xs={6}>
                         <h3 >Gender Demographics</h3>
                         <PieChart data={this.state.genderData}/>
                     </Col>
 
-                    <Col className={'text-center'} md={6}>
+                    <Col className={'text-center'} xs={6}>
                         <h3 >Age Demographics</h3>
                         <BarChart data={{
                             labels: this.state.ageLabels, datasets: [{
@@ -123,11 +125,11 @@ class Analytics extends PureComponent {
                     </Col>
                 </Row>
                 <Row>
-                    <Col className={'text-center'} md={6}>
+                    <Col className={'text-center'} xs={6}>
                         <h3 className={'text-center'}>Activity Demographics</h3>
                         <PolarAreaChart data={this.state.activityDate}/>
                     </Col>
-                    <Col className={'text-center'} md={6}>
+                    <Col className={'text-center'} xs={6}>
                         <h3 className={'text-center'}>Location Demographics</h3>
                         <DoughnutChart data={this.state.partData}/>
                     </Col>

@@ -5,6 +5,7 @@ import Home from "./Home";
 import Experiences from "./Experiences";
 import Donate from "./Donate";
 import Analytics from "./Analytics";
+import Map from "./Map";
 import UserRegistration from "./UserRegistration";
 import UserLogIn from "./UserLogIn";
 
@@ -21,6 +22,7 @@ class Main extends Component {
                         <li><NavLink to="/experiences">Experiences</NavLink></li>
                         <li><NavLink to="/donate">Donate</NavLink></li>
                         <li><NavLink to="/analytics">Analytics</NavLink></li>
+                        <li><NavLink to="/map">Map</NavLink></li>
                         <li><NavLink to="/login">Log In</NavLink></li>
                         <li><NavLink to="/register">Register</NavLink></li>
 
@@ -30,6 +32,7 @@ class Main extends Component {
                         <Route path='/experiences' component={Experiences}/>
                         <Route path='/donate' component={Donate}/>
                         <Route path='/analytics' component={Analytics}/>
+                        <Route path='/map' component={Map}/>
                         <Route path='/login' component={UserLogIn} />
                         <Route path='/register' component={UserRegistration} />
                     </div>
