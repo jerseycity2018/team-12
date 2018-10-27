@@ -184,7 +184,7 @@ class Analytics extends PureComponent {
                 <Row>
                     <Col className={'text-center'}sm={12}>
                         <h3 >First Time vs Not First Time Use of Central Park</h3>
-                        <BarChart style= {{marginLeft: 0}} redraw options={{responsive:true}} data={{
+                        <Bar style= {{marginLeft: 0}} redraw options={{responsive:true}} data={{
                             labels: ["January", "Feb", "March" , "April", "May", "June", "July", "August", "Sept", "Oct", "Nov", "Dec"], datasets: [{
                                 label: 'First Time in Park',
                                 data: this.state.dataArrFirst
