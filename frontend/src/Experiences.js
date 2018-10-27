@@ -7,7 +7,7 @@ class Experiences extends Component {
   render() {
     return (
       <div id={"experiences"}>
-        <h2>EXPERIENCES</h2>
+        <h2>Experiences</h2>
         <ul>
           <Experience imageSrc = {img} Title = "Yoga"
           Descr="Take outdoor yoga classes in Central Park. All levels welcome. Enjoy the perfect setting to do yoga on the grass in New York City and be in harmony with nature."
