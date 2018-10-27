@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+        body{ font: Arial 12px; text-align: center;}
+        .link{
+            stroke: #ccc;
+        }
+        .node text{
+            pointer-events: none;
+            font: sans-serif;
+        }
+        </style>
+
+        <title>Central Park Project</title>
+    </head>
+
+    <body>
+        <script src="https://d3js.org/d3.v5.min.js"></script>
+        <script type="text/javascript" href="cpcsolution/src/App.js"></script>
+        <script type="text/javascript" href="cpcsolution/src/App.test.js"></script>
+        <script type="text/javascript" href="cpcsolution/src/Custom.js"></script>
+        <script type="text/javascript" href="cpcsolution/src/index.js"></script>
+        <script type="text/javascript" href="cpcsolution/src/serviceWorker.js"></script>
+
+        <h3>Data Visualization Testing...</h3>
+        <script type="text/javascript">
+        // Set margin and sizes
+        var margin = {
+            top: 20,
+            bottom: 50,
+            right: 30,
+            left: 50
+        };
+
+        var width = 960 - margin.left - margin.right;
+        var height = 500 - margin.top - margin.bottom;
+        var barWidth = Math.floor(width/19) - 1;
+
+        var x = d3.scale.linear().range([barWidth/2, width-barWidth/2]);
+        var y = d3.scale.linear().range([height, 0])
+
+        var yAxis = d3.svg.axis()
+            .scale(y)
+            .orient("right")
+            .tickSize(-width)
+            .tickFormat(function(d){ return Math.round(d/1e6) + "M"; });
+        
+        // An SVG element with a bottom-right origin
+        var svg = d3.select("body").append("svg")
+            .attr("width", width+margin.left+margin.right)
+            .attr("height", height + margin.top + margin.bottom)
+            .append("g")
+            .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+            
+        // A sliding container to hold the bars by user age
+        var ages = svg.append("g")
+            .attr("class", "ages");
+
+        d3.csv("sample.csv", function(error, data) {
+            // Set the scale domains
+            x.domain([0, 100])
+            
+        });
+
+        </script>
+    </body>
+</html>
