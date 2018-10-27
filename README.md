@@ -1,4 +1,3 @@
-# team-12
 # The Central Solution
 ## The Central Park Conservancy Challenge
 
