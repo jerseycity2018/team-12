@@ -13,6 +13,24 @@ import Donate from "./Donate";
 class Main extends Component {
   render() {
     return (
+      <Navbar>
+        <Navbar.Header>
+          <Navbar.Brand>
+            Central Park Conservancy
+          </Navbar.Brand>
+        </Navbar.Header>
+        <Nav>
+          <NavItem>
+            Experience
+          </NavItem>
+          <NavItem>
+            Donate
+          </NavItem>
+          <NavItem>
+            Map
+          </NavItem>
+        </Nav>
+      </Navbar>
       <HashRouter>
         <div>
            <h1>Visit Central Park!</h1>

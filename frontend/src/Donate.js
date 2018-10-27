@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import Cards from 'react-credit-cards';
 class Donate extends Component {
   render() {
     return (
@@ -34,35 +35,7 @@ class Donate extends Component {
             </label>
             <input type="submit" value="Submit" />
           </form>
-          <form>
-          <p>Please enter your credit card information in the following section.</p>
-          <label>
-              Name on Card:
-              <input type="text" name="cname" />
-            </label>
-            <input type="submit" value="Submit" />
-          </form>
-          <form>
-          <label>
-              Card Number:
-              <input type="text" name="cnum" />
-            </label>
-            <input type="submit" value="Submit" />
-          </form>
-          <form>
-          <label>
-          CVC:
-          <input type="text" name="cvc" />
-        </label>
-        <input type="submit" value="Submit" />
-      </form>
-      <form>
-      <label>
-              Expiration Date:
-              <input type="text" name="expdate" />
-            </label>
-            <input type="submit" value="Submit" />
-          </form>
+          
           <a
             className="App-link"
             href="https://reactjs.org"
@@ -70,7 +43,13 @@ class Donate extends Component {
             rel="noopener noreferrer"
           >
        </a>
-    
+       <Cards
+      number={input.number.value}
+      name={input.name.value}
+      expiry={input.expiry.value}
+      cvc={input.cvc.value}
+      focused={state.focused}
+    />
         </header>
 
       </div>
