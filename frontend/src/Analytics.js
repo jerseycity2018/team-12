@@ -109,7 +109,7 @@ class Analytics extends PureComponent {
                 <Row>
                     <Col className={'text-center'} sm={6}>
                         <h3 >Gender Demographics</h3>
-                        <PieChart data={this.state.genderData}/>
+                        <PieChart data={this.state.genderData} options={{responsive:true}}/>
                     </Col>
 
                     <Col className={'text-center'} sm={6}>
@@ -119,17 +119,17 @@ class Analytics extends PureComponent {
                                 label: 'Age',
                                 data: this.state.ageNums
                             }]
-                        }}/>
+                        }} options={{responsive:true}}/>
                     </Col>
                 </Row>
                 <Row>
                     <Col className={'text-center'} sm={6}>
                         <h3 className={'text-center'}>Activity Demographics</h3>
-                        <PolarAreaChart data={this.state.activityDate}/>
+                        <PolarAreaChart data={this.state.activityDate} options={{responsive:true}}/>
                     </Col>
                     <Col className={'text-center'} sm={6}>
                         <h3 className={'text-center'}>Location Demographics</h3>
-                        <DoughnutChart data={this.state.partData}/>
+                        <DoughnutChart data={this.state.partData} options={{responsive:true}} />
                     </Col>
 
                 </Row>
