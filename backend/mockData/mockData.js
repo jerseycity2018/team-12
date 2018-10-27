@@ -42,9 +42,9 @@ for (let i = 0; i < 1000; i++) {
     const lat = lowerX + (Math.random() * xDiff / 1000000);
     const long = lowerY + (Math.random() * yDiff / 1000000);
     const randDate = new Date();
-    randDate.setFullYear(randDate.getFullYear() - Math.floor(Math.random() * 5));
-    randDate.setMonth(randDate.getMonth() - Math.floor(Math.random() * randDate.getMonth()));
-    randDate.setDate(randDate.getDate() - Math.floor(Math.random() * randDate.getDate()));
+    randDate.setFullYear(randDate.getFullYear() - Math.floor(Math.random() * 2));
+    randDate.setMonth(Math.floor(Math.random() * 12) + 1);
+    randDate.setDate(Math.floor(Math.random() * 31) + 1);
 
     const survey = new Survey({
         gender,

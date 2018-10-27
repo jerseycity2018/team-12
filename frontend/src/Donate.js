@@ -29,7 +29,7 @@ class Donate extends Component {
         });
     }
 
-    handleSumit = event => {
+    handleSubmit = event => {
         event.preventDefault();
     }
 
@@ -112,7 +112,7 @@ class Donate extends Component {
                 disabled={!this.validateForm()}
                 type="submit"
             >
-                Login
+                Submit
             </Button>
             </form>
 
