@@ -24,10 +24,10 @@ class UserRegistration extends Component {
                 <form>
                     <label>
                         Password:
-                        <input type="password" value="FakePSW" id="myPassword" />
+                        <input type="password"  id="myPassword" />
                     </label>
                 </form>
-
+                <input type="submit" value="Submit" />
                 
 
                 </header>
