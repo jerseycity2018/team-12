@@ -107,7 +107,7 @@ router.get('/heat', function (req, res, next) {
         const heatArray = [];
 
         users.forEach((user) => {
-            heatArray.push([user.location.lat, user.location.long, 0.1])
+            heatArray.push([user.location.lat, user.location.long, 0.8])
         });
 
         res.send(heatArray);

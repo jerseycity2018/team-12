@@ -6,7 +6,7 @@ import taichi from './taichi.jpeg'
 class Experiences extends Component {
   render() {
     return (
-      <div>
+      <div id={"experiences"}>
         <h2>EXPERIENCES</h2>
         <ul>
           <Experience imageSrc = {img} Title = "Yoga"

@@ -1,45 +1,41 @@
-* {margin: 0; padding: 0;}
 
-div {
-  margin: 20px;
-}
-
-ul {
+#experiences ul {
   list-style-type: none;
   width: 100%;
 }
 
-h1 {
-  font: bold 20px/1.5 Helvetica, Verdana, sans-serif;
+* {
+  font-family: Helvetica, Verdana, sans-serif !important;
 }
-li{
+#experiences li{
   display: flex;
 }
-div.left{
+#experiences div.left{
   width: 60%;
 }
-div.right{
+#experiences div.right{
   width:40%;
   float: right;
 }
-li img {
+
+#experiences li img {
   float: left;
   margin: 0 15px 0 0;
 }
 
-li p {
+#experiences li p {
   font: 200 12px/1.5 Georgia, Times New Roman, serif;
 }
 
-li {
+#experiences li {
   padding: 10px;
   overflow: auto;
 }
 
-li:hover {
+#experiences li:hover {
   background: #eee;
   cursor: pointer;
 }
-img{
+#experiences img{
   width:150px;
 }
