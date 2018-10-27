@@ -1,0 +1,33 @@
+import React, { Component } from "react";
+import {
+  Route,
+  NavLink,
+  HashRouter
+} from "react-router-dom";
+import Home from "./Home";
+import Experiences from "./Experiences";
+import Donate from "./Donate";
+
+class Main extends Component {
+  render() {
+    return (
+      <HashRouter>
+        <div>
+          <h1>Simple SPA</h1>
+          <ul className="header">
+            <li><NavLink to="/">Home</NavLink></li>
+            <li><NavLink to="/experiences">Experiences</NavLink></li>
+            <li><NavLink to="/donate">Donate</NavLink></li>
+          </ul>
+          <div className="content">
+            <Route path='/' component={Home}/>
+            <Route path='/experiences' component={Experiences}/>
+            <Route path='/donate' component={Donate}/>
+          </div>
+        </div>
+        </HashRouter>
+    );
+  }
+}
+
+export default Main;
