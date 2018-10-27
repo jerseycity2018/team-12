@@ -21,7 +21,7 @@ class Analytics extends PureComponent {
     render() {
         return (
             <div className={'leaflet-container'}>
-                <Map center={[40.785091, -73.968285]} zoom={13} style={{height: '100%'}}>
+                <Map center={[40.785091, -73.968285]} zoom={11} maxZoom={17} style={{height: '100%'}}>
                     <HeatmapLayer
                         points={this.state.heatData}
                         longitudeExtractor={m => m[1]}
