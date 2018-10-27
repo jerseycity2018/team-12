@@ -1,6 +1,6 @@
 # team-12
 # The Central Solution
-##The Central Park Conservancy Challenge
+## The Central Park Conservancy Challenge
 
 # CHALLENGE AND SOLUTION
 
