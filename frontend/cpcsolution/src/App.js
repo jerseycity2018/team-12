@@ -14,7 +14,7 @@ class App extends Component {
         <header className="App-header">
 
         <div row="col-xs-12 col-md-12" id="navbar">
-        <Navbar></Navbar>
+        
         <button type="button" class="btn">Register</button>
         </div>
 
