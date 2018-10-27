@@ -27,7 +27,7 @@ class Main extends Component {
             Donate
           </NavItem>
           <NavItem>
-            Map
+            Mapnpm
           </NavItem>
         </Nav>
       </Navbar>
