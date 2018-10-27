@@ -1,27 +1,62 @@
 import React, { Component } from "react";
+import { Button, FormGroup, FormControl, ControlLabel } from "react-bootstrap";
+import "./UserLogIn.css";
 
 class UserLogIn extends Component {
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            email: "",
+            password: ""
+        };
+    }
+
+    validateForm() {
+        return this.state.email.length > 0 && this.state.password.length > 0;
+    }
+
+    handleChange = event => {
+        this.setState({
+            [event.target.id]: event.target.value
+        });
+    }
+
+    handleSumit = event => {
+        event.preventDefault();
+    }
+
     render() {
         return (
-            <div className="App">
-                <header className="App-header">
-                    <h1>Log In</h1>
-
-                    <form>
-                        <label>
-                            Email:
-                            <input type="text" name="frame" />
-                        </label>
-                    </form>
-                    <form>
-                        <label>
-                            Password:
-                            <input type="password" name="frame" />
-                        </label>
-                    </form>
-
-                    <input type="submit" value="Log In" />
-                </header>
+            <div className="Login">
+            <form onSubmit={this.handleSubmit}>
+            <FormGroup controlId="email" bsSize="large">
+                <ControlLabel>Email</ControlLabel>
+                <FormControl
+                    autoFocus
+                    type="email"
+                    value={this.state.email}
+                    onChange={this.handleChange}
+                />
+                </FormGroup>
+                <FormGroup controlId="password" bsSize="large">
+                <ControlLabel>Password</ControlLabel>
+                <FormControl
+                    value={this.state.password}
+                    onChange={this.handleChange}
+                    type="password"
+                />
+            </FormGroup>
+            <Button
+                block
+                bsSize="large"
+                disabled={!this.validateForm()}
+                type="submit"
+            >
+                Login
+            </Button>
+            </form>
+                
             </div>
         );
     }
