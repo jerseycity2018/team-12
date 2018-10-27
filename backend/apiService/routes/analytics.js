@@ -11,7 +11,6 @@ router.get('/gender', function (req, res, next) {
         let females = 0;
 
         users.forEach((user) => {
-            console.log(user.gender);
             if (user.gender === 'male') {
                 males++;
             } else {
@@ -26,8 +25,26 @@ router.get('/gender', function (req, res, next) {
     });
 });
 router.get('/age', function (req, res, next) {
+    User.find({}).then(function (users) {
+        const ages = [];
+        users.forEach((user) => {
+           if (ages[user.age] === undefined) {
+               ages[user.age] = 0;
+           }
 
+           ages[user.age]++;
+        });
 
+        const agesArray = [];
+
+        for (let i = 0; i < ages.length; i++) {
+            if (ages[i] !== undefined) {
+                agesArray.push([i, ages[i]]);
+            }
+        }
+
+        res.send(agesArray);
+    });
 });
 
 module.exports = router;
