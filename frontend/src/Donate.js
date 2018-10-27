@@ -1,7 +1,11 @@
 import React, { Component } from "react";
 import { Button, FormGroup, FormControl, ControlLabel } from "react-bootstrap";
+
 import Form from './Form.js'
 import "./Donate.css";
+
+
+const FORMAT = 'MM/DD/YYYY';
 
 class Donate extends Component {
     constructor(props) {
@@ -27,11 +31,11 @@ class Donate extends Component {
         this.setState({
             [event.target.id]: event.target.value
         });
-    };
+    }
 
     handleSubmit = event => {
         event.preventDefault();
-    };
+    }
 
     render() {
         return (
@@ -103,7 +107,7 @@ class Donate extends Component {
                 <FormControl
                     value={this.state.expirationDate}
                     onChange={this.handleChange}
-                    type="expirationDate"
+                    type="date"
                 />
             </FormGroup>
             <Button

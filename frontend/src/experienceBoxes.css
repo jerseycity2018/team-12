@@ -24,7 +24,7 @@
 }
 
 #experiences li p {
-  font: 200 12px/1.5 Georgia, Times New Roman, serif;
+  font: 200 1.5em Georgia, Times New Roman, serif;
 }
 
 #experiences li {
@@ -40,4 +40,8 @@
   width: 30%;
     height: 30%;
   /* width:150px; */
+}
+
+#experiences p{
+  font-size: 20px;
 }
