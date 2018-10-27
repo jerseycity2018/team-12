@@ -6,3 +6,13 @@ const User = mongoose.model('user', {
     age: Number,
     location: {lat: Number, long: Number}
 });
+
+const Survey =  mongoose.model('survey', {
+
+    gender: String,
+    outOfState: String,
+    activity: String,
+    firstTime: String,
+    part: String
+
+});
