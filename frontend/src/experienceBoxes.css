@@ -20,7 +20,7 @@
 
 #experiences li img {
   float: left;
-  margin: 0 15px 0 0;
+  margin: 0 10px 0 0;
 }
 
 #experiences li p {
@@ -28,7 +28,8 @@
 }
 
 #experiences li {
-  padding: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
   overflow: auto;
 }
 
