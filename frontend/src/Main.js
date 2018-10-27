@@ -10,29 +10,11 @@ import Home from "./Home";
 import Experiences from "./Experiences";
 import Donate from "./Donate";
 import Analytics from "./Analytics";
-import {Nav, Navbar, NavItem} from "react-bootstrap";
+// import {Nav, Navbar, NavItem} from "react-bootstrap";
 
 class Main extends Component {
   render() {
     return (
-     [ <Navbar>
-        <Navbar.Header>
-          <Navbar.Brand>
-            Central Park Conservancy
-          </Navbar.Brand>
-        </Navbar.Header>
-        <Nav>
-          <NavItem>
-            Experience
-          </NavItem>
-          <NavItem>
-            Donate
-          </NavItem>
-          <NavItem>
-            Mapnpm
-          </NavItem>
-        </Nav>
-      </Navbar>,
       <HashRouter>
         <div>
            <h1>Visit Central Park!</h1>
@@ -52,7 +34,7 @@ class Main extends Component {
           </div>
         </div>
         </HashRouter>
-    ]);
+    );
   }
 }
 
