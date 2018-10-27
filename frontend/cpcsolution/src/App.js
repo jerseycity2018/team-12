@@ -2,8 +2,14 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import Custom from './Custom.js';
-
+import {
+  Route,
+  NavLink,
+  HashRouter
+} from "react-router-dom";
+import
 class App extends Component {
+
   render() {
     return (
       <div className="App">
@@ -27,4 +33,27 @@ class App extends Component {
   }
 }
 
+/*class MyComponent extends React.Component {
+    constructor(props) {
+        super(props);
+        this.myRef = React.createRef();
+    }
+    render() {
+        return <div ref={this.myRef}
+    }
+}
+
+class MyComponent extends React.Component {
+    render() {
+        return <div ref={ re => { this.myRef = re } }
+    }
+}
+
+class MyComponent extends React.Component {
+    scrollToDomRef = () => {
+        const myDomNode = ReactDOM.findDOMNode(this.myRef.current)
+        myDomNode.scrollIntoView()
+    }
+}
+*/
 export default App;
