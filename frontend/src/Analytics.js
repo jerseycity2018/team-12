@@ -8,15 +8,17 @@ const DoughnutChart = require("react-chartjs").Doughnut;
 const PolarAreaChart = require("react-chartjs").PolarArea;
 
 
-class Analytics extends PureComponent {
+
+    class Analytics extends PureComponent {
     state = {
         genderData: [],
         ageLabels: [],
         ageNums: [],
         ageData: [],
         partData: [],
-        activityDate: []
-
+        activityDate: [],
+        dateNYCdata: [],
+        dataNotdata: []
     };
 
     componentDidMount() {
@@ -86,20 +88,40 @@ class Analytics extends PureComponent {
 
 
             this.setState({
+                borderColor: "#8e5ea2",
                 activityDate: [{
                     value: walking,
-                    label: 'Walking'
+                    label: 'Walking',
+                    Color: "#8e5ea2"
                 }, {
                     value: sports,
-                    label: 'Sports'
+                    label: 'Sports',
+                    backgroundColorHover: "#3e95cd"
                 }, {
                     value: leisure,
-                    label: 'Leisure'
+                    label: 'Leisure',
+                    backgroundColorHover: "#3cba9f"
                 }, {
                     value: eat,
-                    label: 'Eat'
+                    label: 'Eat',
+                    backgroundColorHover: "#e8c3b9"
                 }]
             });
+        });
+
+
+        axios.get('http://localhost:3001/analytics/dateNYC').then((res) => {
+
+            const arrNYC = res.data.arrNYC;
+            const arrNot = res.data.arrNot;
+
+            console.log(arrNYC);
+
+            this.setState({
+                dataNotdata: arrNot,
+                dateNYCdata: arrNYC
+
+            })
         });
     }
 
@@ -114,24 +136,39 @@ class Analytics extends PureComponent {
 
                     <Col className={'text-center'} sm={6}>
                         <h3 >Age Demographics</h3>
-                        <BarChart data={{
+                        <BarChart options={{responsive:true}} data={{
                             labels: this.state.ageLabels, datasets: [{
                                 label: 'Age',
                                 data: this.state.ageNums
                             }]
-                        }} options={{responsive:true}}/>
+                        }}/>
                     </Col>
                 </Row>
                 <Row>
                     <Col className={'text-center'} sm={6}>
                         <h3 className={'text-center'}>Activity Demographics</h3>
-                        <PolarAreaChart data={this.state.activityDate} options={{responsive:true}}/>
+                        <PolarAreaChart data={this.state.activityDate} options={{responsive:true}} />
                     </Col>
-                    <Col className={'text-center'} sm={6}>
+                    <Col className={'text-center'} md={6}>
                         <h3 className={'text-center'}>Location Demographics</h3>
-                        <DoughnutChart data={this.state.partData} options={{responsive:true}} />
+                        <DoughnutChart data={this.state.partData} options={{responsive:true}}/>
                     </Col>
-
+                </Row>
+                <Row>
+                    <Col className={'text-center'}sm={12}>
+                        <h3 >Park usage of tourist vs. residents</h3>
+                        <BarChart style= {{marginLeft: 0}} redraw options={{responsive:true}} data={{
+                            labels: ["January", "Feb", "March" , "April", "May", "June", "July", "August", "Sept", "Oct", "Nov", "Dec"], datasets: [{
+                                label: 'Live In NYC',
+                                data: this.state.dateNYCdata
+                            },
+                                {
+                                    color: "#e8c3b9",
+                                    label: 'Does Not Live In NYC',
+                                    data: this.state.dataNotdata
+                            }]
+                        }}/>
+                    </Col>
                 </Row>
             </Grid>
         );
