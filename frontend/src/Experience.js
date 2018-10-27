@@ -2,10 +2,15 @@ import React, { Component } from "react";
 import './experienceBoxes.css';
 class Experience extends React.Component {
     render() {
-      return <li>
+      return <li class="exp">
+      <div class="right">
+        <p>{this.props.Time}</p>
+      </div>
       <img src={this.props.imageSrc}/>
-      <h1> {this.props.Title} </h1>
-      <p>{this.props.Descr}</p>
+      <div class="left"><h1> {this.props.Title} </h1>
+
+      <p>{this.props.Descr}</p></div>
+
       </li>;
     }
 }

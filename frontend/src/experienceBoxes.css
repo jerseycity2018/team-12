@@ -1,11 +1,21 @@
 
 #experiences ul {
   list-style-type: none;
-  width: 500px;
+  width: 100%;
 }
 
 * {
   font-family: Helvetica, Verdana, sans-serif !important;
+}
+#experiences li{
+  display: flex;
+}
+#experiences div.left{
+  width: 60%;
+}
+#experiences div.right{
+  width:40%;
+  float: right;
 }
 
 #experiences li img {

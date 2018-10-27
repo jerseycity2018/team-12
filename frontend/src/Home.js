@@ -22,6 +22,27 @@ class Home extends Component {
         <div>
           <h2>Survey</h2>
         <form onSubmit={this.handleSubmit}>
+        <Question questionText="Gender:"/>
+         <ul>
+          <li><input onChange={this.handleInputChange.bind(this)} type="radio" name="gender" value="female" />Female</li>
+          <li><input onChange={this.handleInputChange.bind(this)} type="radio" name="gender" value="male" />Male</li>
+          <li><input onChange={this.handleInputChange.bind(this)} type="radio" name="gender" value="other" />Other</li>
+        </ul>
+
+        <Question questionText="Age:"/>
+         <ul>
+          <li><input onChange={this.handleInputChange.bind(this)} type="radio" name="age" value="teenage"/>12-18</li>
+          <li><input onChange={this.handleInputChange.bind(this)} type="radio" name="age" value="youngAdult"/>19-30</li>
+          <li><input onChange={this.handleInputChange.bind(this)} type="radio" name="age" value="adult" />31-52</li>
+          <li><input onChange={this.handleInputChange.bind(this)} type="radio" name="age" value="senior" />53-65+</li>
+        </ul>
+
+        <Question questionText="Where are you coming from?"/>
+         <ul>
+          <li><input onChange={this.handleInputChange.bind(this)} type="radio" name="origin" value="ny" />New York</li>
+          <li><input onChange={this.handleInputChange.bind(this)} type="radio" name="origin" value="notNy" />Not New York</li>
+        </ul>
+
          <Question questionText="Where are you coming from?"/>
          <ul>
           <li><input onChange={this.handleInputChange.bind(this)} type="radio" name="origin" value="ny" />New York</li>
