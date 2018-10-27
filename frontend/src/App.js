@@ -32,13 +32,7 @@ class App extends Component {
             Park interconnects us all as one big family. Our lives are New York and Central Park is our heart, so let's
             keep it breathing... together.
           </p>
-          <form>
-            <label>
-              Full Legal Name:
-              <input type="text" name="name" />
-            </label>
-            <input type="submit" value="Submit" />
-            </form>
+      
           <a
             className="App-link"
             href="https://reactjs.org"

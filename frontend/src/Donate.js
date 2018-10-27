@@ -14,6 +14,8 @@ class Donate extends Component {
                         Park interconnects us all as one big family. Our lives are New York and Central Park is our heart, so let's
                         keep it breathing... together.
                     </p>
+                    <div className="Info">
+                    </div>
                     <Form questionText = "First Name:" name = "fname"/>
                       <Form questionText = "Last Name:" name = "lname"/>
                         <Form questionText = "Donation Amount:" name = "fname"/>
@@ -23,13 +25,6 @@ class Donate extends Component {
                               <Form questionText = "CVC:" name = "cvc"/>
                                 <Form questionText = "Expiration Date:" name = "expdate"/>
                         <input type="submit" value="Submit" />
-                    <a
-                        className="App-link"
-                        href="https://reactjs.org"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-                    </a>
 
                 </header>
 

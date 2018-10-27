@@ -8,6 +8,18 @@ li {
     display: block;
 }
 
+.header img {
+    float: center;
+    width: 40px;
+    height: 80px;
+    background: #ffffff;
+  }
+  
+  .header h1 {
+    position: relative;
+    top: 18px;
+    left: 10px;
+  }
 .navbar ul.header {
     background-color: transparent;
 }
