@@ -1,7 +1,18 @@
+@media all and (min-width: 480px) {
+    .App {
+        padding: 60px 0;
+    }
+
+    .App form {
+        margin: 0 auto;
+        max-width: 500px;
+    }
+}
+
 .App {
 
     text-align: center;  
-    background-color: transparent;
+    background-color: white;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -14,7 +25,7 @@
 
 .App-header {
     text-align: center;  
-    background-color: transparent;
+    background-color: white;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -25,12 +36,7 @@
 
 }
 
-.Info {
-    text-align: left;
-    display: flex;
-    flex-direction: row;
-    align-items: left;
-    font-size: calc(10px, 2vmin);
-    color: rgb(72, 151, 72)
+.text {
+    max-width: 1000px;
 }
   
