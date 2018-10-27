@@ -58,15 +58,15 @@ class Donate extends Component {
                 <FormGroup controlId="lastName" bsSize="large">
                 <ControlLabel>Last Name</ControlLabel>
                 <FormControl
-                    value={this.state.donation}
+                    value={this.state.lastName}
                     onChange={this.handleChange}
                     type="lastName"
                 />
             </FormGroup>
-            <FormGroup controlId="Donation Amout" bsSize="large">
+            <FormGroup controlId="donation" bsSize="large">
                 <ControlLabel>Donation Amount</ControlLabel>
                 <FormControl
-                    value={this.state.lastName}
+                    value={this.state.donation}
                     onChange={this.handleChange}
                     type="donation"
                 />
@@ -74,7 +74,7 @@ class Donate extends Component {
             <div className="text">
                 <p>Please enter your credit card information in the following section.</p>
             </div>
-            <FormGroup controlId="name on card" bsSize="large">
+            <FormGroup controlId="nameOnCard" bsSize="large">
                 <ControlLabel>Name on Card</ControlLabel>
                 <FormControl
                     value={this.state.nameOnCard}
@@ -82,7 +82,7 @@ class Donate extends Component {
                     type="nameOnCard"
                 />
             </FormGroup>
-            <FormGroup controlId="card number" bsSize="large">
+            <FormGroup controlId="cardNumber" bsSize="large">
                 <ControlLabel>Card Number</ControlLabel>
                 <FormControl
                     value={this.state.cardNumber}
@@ -98,7 +98,7 @@ class Donate extends Component {
                     type="cvc"
                 />
             </FormGroup>
-            <FormGroup controlId="expiration date" bsSize="large">
+            <FormGroup controlId="expirationDate" bsSize="large">
                 <ControlLabel>Expiration Date</ControlLabel>
                 <FormControl
                     value={this.state.expirationDate}
