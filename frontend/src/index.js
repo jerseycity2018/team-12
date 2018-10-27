@@ -1,6 +1,5 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import 'react-credit-cards/es/styles-compiled.css';
 import ReactDOM from 'react-dom';
 import './index.css';
 import './menu.css'

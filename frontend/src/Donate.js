@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import Cards from 'react-credit-cards';
 class Donate extends Component {
   render() {
     return (
@@ -35,6 +34,7 @@ class Donate extends Component {
             </label>
             <input type="submit" value="Submit" />
           </form>
+          <p>Please enter your credit card information in the following section.</p>
           
           <a
             className="App-link"
