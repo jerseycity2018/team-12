@@ -24,7 +24,7 @@ class Home extends Component {
         return (
             !this.state.submitted ? (
             <div>
-                <h2>Survey</h2>
+                <h3>Help Us Make Your Experience Better:</h3>
                 <form onSubmit={this.handleSubmit}>
                     <Question questionText="Gender:"/>
                     <ul className={'question-ul'}>
