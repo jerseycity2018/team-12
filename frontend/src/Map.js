@@ -1,9 +1,9 @@
 import React, {PureComponent} from 'react';
 import { render } from 'react-dom';
 import {FeatureGroup, LayersControl, Map, Marker, Popup, TileLayer} from 'react-leaflet';
-import HeatmapLayer from 'react-leaflet-heatmap-layer/src/HeatmapLayer';
-
+import HeatmapLayer from 'react-leaflet-heatmap-layer';
 import axios from 'axios';
+import {Col, Grid, Row} from 'react-bootstrap';
 
 class Analytics extends PureComponent {
     state = {
@@ -20,8 +20,10 @@ class Analytics extends PureComponent {
 
     render() {
         return (
-            <div>
-                <Map center={[40.785091, -73.968285]} zoom={13} style={{ height: '100%' }} >
+            <Grid>
+                <Row>
+                    <Col xs={12}>
+                <Map center={[40.785091, -73.968285]} zoom={13} >
                     <LayersControl>
                         <LayersControl.BaseLayer name="Base" checked>
                             <TileLayer
@@ -31,11 +33,6 @@ class Analytics extends PureComponent {
                         </LayersControl.BaseLayer>
                         <LayersControl.Overlay name="Heatmap" checked>
                             <FeatureGroup color="purple">
-                                <Marker position={[50.05, -0.09]} >
-                                    <Popup>
-                                        <span>A pretty CSS3 popup.<br /> Easily customizable. </span>
-                                    </Popup>
-                                </Marker>
                                 <HeatmapLayer
                                     fitBoundsOnLoad
                                     fitBoundsOnUpdate
@@ -57,7 +54,9 @@ class Analytics extends PureComponent {
                         </LayersControl.Overlay>
                     </LayersControl>
                 </Map>
-            </div>
+                    </Col>
+                </Row>
+            </Grid>
         );
     }
 }
