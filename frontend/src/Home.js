@@ -14,8 +14,8 @@ class Home extends Component {
     alert('Your survey is submitted! ' + this.state.value);
     event.preventDefault();
   }
-  
-  
+
+
   render() {
     return (
 
@@ -43,11 +43,6 @@ class Home extends Component {
           <li><input onChange={this.handleInputChange.bind(this)} type="radio" name="origin" value="notNy" />Not New York</li>
         </ul>
 
-         <Question questionText="Where are you coming from?"/>
-         <ul>
-          <li><input onChange={this.handleInputChange.bind(this)} type="radio" name="origin" value="ny" />New York</li>
-          <li><input onChange={this.handleInputChange.bind(this)} type="radio" name="origin" value="notNy" />Not New York</li>
-        </ul>
 
          <Question questionText="What did you do in the park?"/>
          <ul>
@@ -56,7 +51,7 @@ class Home extends Component {
           <li><input onChange={this.handleInputChange.bind(this)} type="checkbox" name="activity" value="sports" />Sports</li>
           <li><input onChange={this.handleInputChange.bind(this)} type="checkbox" name="activity" value="events" />Park Events</li>
           </ul>
-         
+
          <Question questionText="Was it your first time in the park?"/>
          <ul>
           <li><input onChange={this.handleInputChange.bind(this)} type="radio" name="freq" value="yes" />Yes</li>
@@ -71,7 +66,7 @@ class Home extends Component {
           <li><input onChange={this.handleInputChange.bind(this)} type="radio" name="location" value="east" />East</li>
         </ul>
         <input type="submit" value="Submit" />
-        
+
 
          </form>
         </div>
