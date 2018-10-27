@@ -1,5 +1,6 @@
 import React, {Component} from "react"
-class Exper extends React.Component{
+
+class Form extends React.Component{
   render(){
     return <form>
         <label>
@@ -9,3 +10,5 @@ class Exper extends React.Component{
     </form>
   }
 }
+
+export default Form
