@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import './experienceBoxes.css';
 class Experience extends React.Component {
     render() {
-      return <li>
+      return <li class="exp">
       <div class="right">
         <p>{this.props.Time}</p>
       </div>

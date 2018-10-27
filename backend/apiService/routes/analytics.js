@@ -102,4 +102,16 @@ router.get('/activity', function (req, res, next) {
     });
 });
 
+router.get('/heat', function (req, res, next) {
+    Survey.find({}).then(function (users) {
+        const heatArray = [];
+
+        users.forEach((user) => {
+            heatArray.push([user.location.lat, user.location.long, 0.1])
+        });
+
+        res.send(heatArray);
+    });
+});
+
 module.exports = router;
