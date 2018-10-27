@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import Form from './Form.js'
 class Donate extends Component {
     render() {
         return (
@@ -13,56 +14,15 @@ class Donate extends Component {
                         Park interconnects us all as one big family. Our lives are New York and Central Park is our heart, so let's
                         keep it breathing... together.
                     </p>
-                    <form>
-                        <label>
-                            First Name:
-                            <input type="text" name="fname" />
-                        </label>
+                    <Form questionText = "First Name:" name = "fname"/>
+                      <Form questionText = "Last Name:" name = "lname"/>
+                        <Form questionText = "Donation Amount:" name = "fname"/>
+                          <p>Please enter your credit card information in the following section.</p>
+                          <Form questionText = "Name on Card:" name = "cname"/>
+                            <Form questionText = "Card Number:" name = "cnum"/>
+                              <Form questionText = "CVC:" name = "cvc"/>
+                                <Form questionText = "Expiration Date:" name = "expdate"/>
                         <input type="submit" value="Submit" />
-                    </form>
-                    <form>
-                        <label>
-                            Last Name:
-                            <input type="text" name="lname" />
-                        </label>
-                        <input type="submit" value="Submit" />
-                    </form>
-                    <form>
-                        <label>
-                            Donation Amount:
-                            <input type="text" name="amt" />
-                        </label>
-                        <input type="submit" value="Submit" />
-                    </form>
-                    <form>
-                        <p>Please enter your credit card information in the following section.</p>
-                        <label>
-                            Name on Card:
-                            <input type="text" name="cname" />
-                        </label>
-                        <input type="submit" value="Submit" />
-                    </form>
-                    <form>
-                        <label>
-                            Card Number:
-                            <input type="text" name="cnum" />
-                        </label>
-                        <input type="submit" value="Submit" />
-                    </form>
-                    <form>
-                        <label>
-                            CVC:
-                            <input type="text" name="cvc" />
-                        </label>
-                        <input type="submit" value="Submit" />
-                    </form>
-                    <form>
-                        <label>
-                            Expiration Date:
-                            <input type="text" name="expdate" />
-                        </label>
-                        <input type="submit" value="Submit" />
-                    </form>
                     <a
                         className="App-link"
                         href="https://reactjs.org"
