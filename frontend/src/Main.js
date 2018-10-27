@@ -10,6 +10,7 @@ import Home from "./Home";
 import Experiences from "./Experiences";
 import Donate from "./Donate";
 import Analytics from "./Analytics";
+import {Nav, Navbar, NavItem} from "react-bootstrap";
 
 class Main extends Component {
   render() {
