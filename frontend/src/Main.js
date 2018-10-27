@@ -17,7 +17,10 @@ class Main extends Component {
     return (
       <HashRouter>
         <div>
-           <h1>Visit Central Park!</h1>
+          <div class="header">
+            <h1>Welcome to Central Park...</h1>
+            <img src="cpc.png"/>
+          </div>
           <ul className="header">
             <li><NavLink to="/">Home</NavLink></li>
             <li><NavLink to="/experiences">Experiences</NavLink></li>

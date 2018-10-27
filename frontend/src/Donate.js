@@ -13,6 +13,7 @@ class Donate extends Component {
                         Park interconnects us all as one big family. Our lives are New York and Central Park is our heart, so let's
                         keep it breathing... together.
                     </p>
+                    <div className="Info">
                     <form>
                         <label>
                             First Name:
@@ -63,6 +64,7 @@ class Donate extends Component {
                         </label>
                         <input type="submit" value="Submit" />
                     </form>
+                    </div>
                     <a
                         className="App-link"
                         href="https://reactjs.org"
