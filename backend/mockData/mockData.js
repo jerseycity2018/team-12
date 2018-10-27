@@ -21,7 +21,7 @@ const xDiff = (upperX - lowerX) * 1000000;
 const yDiff = (upperY - lowerY) * 1000000;
 
 for (let i = 0; i < 20000; i++) {
-    let gender = Math.floor(Math.random() * 2) === 1;
+    let gender = Math.floor(Math.random() * 2);
     const firstName = faker.name.firstName(gender);
     const lastName = faker.name.lastName(gender);
     const age = Math.abs(Math.floor(randomAge()));

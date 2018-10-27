@@ -9,6 +9,7 @@ import {
 import Home from "./Home";
 import Experiences from "./Experiences";
 import Donate from "./Donate";
+import Analytics from "./Analytics";
 
 class Main extends Component {
   render() {
@@ -30,7 +31,7 @@ class Main extends Component {
             Map
           </NavItem>
         </Nav>
-      </Navbar>, 
+      </Navbar>,
       <HashRouter>
         <div>
            <h1>Visit Central Park!</h1>
@@ -43,10 +44,11 @@ class Main extends Component {
             <Route exact path='/' component={Home}/>
             <Route path='/experiences' component={Experiences}/>
             <Route path='/donate' component={Donate}/>
+            <Route path='/analytics' component={Analytics}/>
 
           </div>
         </div>
-     </HashRouter> ]
+        </HashRouter>
     );
   }
 }
