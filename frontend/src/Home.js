@@ -100,7 +100,6 @@ class Home extends Component {
 
         );
     }
-<<<<<<< HEAD
 
   handleSubmit(event) {
     alert('Your survey is submitted! ' + this.state.value);
@@ -165,8 +164,6 @@ class Home extends Component {
 
     );
   }
-=======
->>>>>>> b59111f8721b35802bad71540ad67bab8ae9b8e1
 }
 
 export default Home;

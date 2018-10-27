@@ -16,7 +16,7 @@ class Main extends Component {
         return (
             <HashRouter>
                 <div className={'navbar'}>
-                    <h1>Visit Central Park!</h1>
+                    <h1>The Central Solution</h1>
                     <ul className="header">
                         <li><NavLink to="/">Home</NavLink></li>
                         <li><NavLink to="/experiences">Experiences</NavLink></li>
