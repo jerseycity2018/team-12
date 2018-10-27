@@ -1,8 +1,6 @@
 import React, {PureComponent} from 'react';
 import {Col, Grid, Row} from 'react-bootstrap';
 import axios from 'axios';
-import { Map, Marker, Popup, TileLayer } from 'react-leaflet';
-import HeatmapLayer from 'react-leaflet-heatmap-layer/src/HeatmapLayer';
 
 const PieChart = require("react-chartjs").Pie;
 const BarChart = require("react-chartjs").Bar;
