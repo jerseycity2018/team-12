@@ -57,7 +57,11 @@
         var ages = svg.append("g")
             .attr("class", "ages");
 
-        
+        d3.csv("sample.csv", function(error, data) {
+            // Set the scale domains
+            x.domain([0, 100])
+            
+        });
 
         </script>
     </body>
