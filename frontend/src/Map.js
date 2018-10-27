@@ -11,6 +11,13 @@ class Analytics extends PureComponent {
     };
 
     componentDidMount() {
+        var geoSuccess = function(position) {
+            axios.post('http://localhost:3001/analytics/heat', position, function () {
+
+            });
+        };
+        navigator.geolocation.getCurrentPosition(geoSuccess);
+
         axios.get('http://localhost:3001/analytics/heat').then((res) => {
             this.setState({
                 heatData: res.data
