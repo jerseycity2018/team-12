@@ -37,5 +37,7 @@
   cursor: pointer;
 }
 #experiences img{
-  width:150px;
+  width: 30%;
+    height: 30%;
+  /* width:150px; */
 }
