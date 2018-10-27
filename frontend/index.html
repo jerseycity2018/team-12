@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+        body{ font: Arial 12px; text-align: center;}
+        .link{
+            stroke: #ccc;
+        }
+        .node text{
+            pointer-events: none;
+            font: sans-serif;
+        }
+        </style>
+
+        <title>Central Park Project</title>
+    </head>
+
+    <body>
+        <script src="https://d3js.org/d3.v5.min.js"></script>
+        <script type="text/javascript" href="cpcsolution/src/App.js"></script>
+        
+        <h3>Data Visualization Testing...</h3>
+        <script type="text/javascript">
+        // Set margin and sizes
+        var margin = {
+            top: 20,
+            bottom: 50,
+            right: 30,
+            left: 50
+        };
+
+        var width = 960 - margin.left - margin.right;
+        var height = 500 - margin.top - margin.bottom;
+        var barWidth = Math.floor(width/19) - 1;
+
+        var x = d3.scale.linear().range([barWidth/2, width-barWidth/2]);
+        var y = d3.scale.linear().range([height, 0])
+
+        var yAxis = d3.svg.axis()
+            .scale(y)
+            .orient("right")
+            .tickSize(-width)
+            .tickFormat(function(d){ return Math.round(d/1e6) + "M"; });
+        
+        
+
+        </script>
+    </body>
+</html>
