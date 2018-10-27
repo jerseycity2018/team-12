@@ -6,7 +6,7 @@ import Experiences from "./Experiences";
 import Donate from "./Donate";
 import Analytics from "./Analytics";
 import UserRegistration from "./UserRegistration";
-
+import UserLogIn from "./UserLogIn";
 
 // import {Nav, Navbar, NavItem} from "react-bootstrap";
 
@@ -15,26 +15,28 @@ class Main extends Component {
         return (
             <HashRouter>
                 <div className={'navbar'}>
-                <h1>Welcome to Central Park...</h1>
-                <img src="cpc.png"/>
+                    <h1>Visit Central Park!</h1>
                     <ul className="header">
                         <li><NavLink to="/">Home</NavLink></li>
                         <li><NavLink to="/experiences">Experiences</NavLink></li>
                         <li><NavLink to="/donate">Donate</NavLink></li>
                         <li><NavLink to="/analytics">Analytics</NavLink></li>
+                        <li><NavLink to="/login">Log In</NavLink></li>
                         <li><NavLink to="/register">Register</NavLink></li>
+
                     </ul>
                     <div className="content">
                         <Route exact path='/' component={Home}/>
                         <Route path='/experiences' component={Experiences}/>
                         <Route path='/donate' component={Donate}/>
                         <Route path='/analytics' component={Analytics}/>
+                        <Route path='/login' component={UserLogIn} />
                         <Route path='/register' component={UserRegistration} />
                     </div>
                 </div>
             </HashRouter>
         );
     }
-  }
+}
 
 export default Main;
