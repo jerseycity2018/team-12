@@ -9,7 +9,7 @@ var request = require('request');
 var MongoClient = require('mongodb').MongoClient;
 
 const mongoose = require('mongoose');
-const User = mongoose.model('user', {firstName: String, lastName: String, gender: String, age:Number, location: {lat: Number, long:Number}});
+const User = mongoose.model('user');
 mongoose.connect("mongodb://35.170.187.47:27017/register");
 
 router.route('/').post(function(req,res,next) {

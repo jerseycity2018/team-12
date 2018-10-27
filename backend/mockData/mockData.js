@@ -1,7 +1,13 @@
 const mongoose = require('mongoose');
 mongoose.connect('mongodb://35.170.187.47:27017/test');
 
-const User = mongoose.model('user', {name: String});
+const User = mongoose.model('user', {
+    firstName: String,
+    lastName: String,
+    gender: String,
+    age: Number,
+    location: {lat: Number, long: Number}
+});
 
 const faker = require('faker');
 const d3 = require("d3-random");
