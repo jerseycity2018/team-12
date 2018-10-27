@@ -15,17 +15,8 @@ class Main extends Component {
     return (
       <HashRouter>
         <div>
-        
 
-
-
-
-
-
-
-
-
-           <h1>Simple SPA</h1>
+           <h1>Visit Central Park!</h1>
           <ul className="header">
             <li><NavLink to="/">Home</NavLink></li>
             <li><NavLink to="/experiences">Experiences</NavLink></li>
@@ -35,7 +26,7 @@ class Main extends Component {
             <Route exact path='/' component={Home}/>
             <Route path='/experiences' component={Experiences}/>
             <Route path='/donate' component={Donate}/>
-          </div> 
+          </div>
         </div>
         </HashRouter>
     );
