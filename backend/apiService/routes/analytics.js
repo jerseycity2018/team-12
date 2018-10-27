@@ -151,8 +151,6 @@ router.get('/firstNYC', function (req, res, next) {
 
             var tempBoolean = user.firstTime;
             var tempNum = user.date.getMonth();
-            console.log(tempNum);
-            console.log(user.date);
 
             if (tempBoolean){
 

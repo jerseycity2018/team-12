@@ -1,6 +1,8 @@
 import React, {Component} from "react";
 import {HashRouter, NavLink, Route} from 'react-router-dom';
 import './main.css';
+import {Image} from 'react-bootstrap';
+import img from './leaf.png';
 import Home from "./Home";
 import Experiences from "./Experiences";
 import Donate from "./Donate";
@@ -16,7 +18,7 @@ class Main extends Component {
         return (
             <HashRouter>
                 <div className={'navbar'}>
-                    <h1>The Central Solution</h1>
+                    <h1>The Central Solution<Image src={img} style={{height: '40px', width: '40px'}}/></h1>
                     <ul className="header">
                         <li><NavLink exact to="/">Home</NavLink></li>
                         <li><NavLink to="/experiences">Experiences</NavLink></li>
