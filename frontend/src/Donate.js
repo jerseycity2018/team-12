@@ -1,6 +1,5 @@
 import React, { Component } from "react";
-import Custom from './Custom.js';
-
+import Cards from 'react-credit-cards';
 class Donate extends Component {
   render() {
     return (
@@ -44,6 +43,13 @@ class Donate extends Component {
             rel="noopener noreferrer"
           >
        </a>
+       <Cards
+      number={input.number.value}
+      name={input.name.value}
+      expiry={input.expiry.value}
+      cvc={input.cvc.value}
+      focused={state.focused}
+    />
         </header>
 
       </div>
