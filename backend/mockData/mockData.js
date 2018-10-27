@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 mongoose.connect('mongodb://35.170.187.47:27017/survey');
 
-const Survey =  mongoose.model('survey', {
+const Survey = mongoose.model('survey', {
     age: Number,
     gender: String,
     outOfState: Boolean,
@@ -9,9 +9,10 @@ const Survey =  mongoose.model('survey', {
     firstTime: Boolean,
     part: String
 });
+
 const d3 = require("d3-random");
-const randomAge = d3.randomNormal(20, 5);
-const randomGender = d3.randomNormal();
+const randomAge = d3.randomNormal(20, 2);
+const randomGender = d3.randomNormal(2, 2);
 const randomActivity = d3.randomNormal(3, 10);
 
 const activities = ['walking', 'leisure', 'sports', 'eat'];

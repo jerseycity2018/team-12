@@ -9,7 +9,7 @@ class Analytics extends PureComponent {
     state = {
         genderData: [],
         ageLabels: [],
-        ageDatasets: [],
+        ageNums: [],
         ageData: []
     };
 
@@ -31,14 +31,17 @@ class Analytics extends PureComponent {
         axios.get('http://localhost:3001/analytics/age').then((res) => {
             const ageData = res.data;
 
+            const ageLabels = [];
             const ageNums = [];
 
             ageData.forEach((data) => {
-                ageNums.push({label: data[0], value: data[1]});
+                ageLabels.push(data[0]);
+                ageNums.push(data[1]);
             });
 
             this.setState({
-                ageData: ageNums,
+                ageLabels,
+                ageNums
             });
         });
     }
@@ -48,14 +51,31 @@ class Analytics extends PureComponent {
             <Grid>
                 <Row>
                     <Col md={6}>
+                        <h3 className={'text-center'}>Gender Demographics</h3>
                         <PieChart data={this.state.genderData}/>
                     </Col>
 
                     <Col md={6}>
-                        <PieChart data={this.state.ageData}/>
+                        <h3 className={'text-center'}>Age Demographics</h3>
+                        <BarChart data={{
+                            labels: this.state.ageLabels, datasets: [{
+                                label: 'Age',
+                                data: this.state.ageNums
+                            }]
+                        }}/>
                     </Col>
                 </Row>
                 <Row>
+                    <Col md={6}>
+                        <h3 className={'text-center'}>Activity Demographics</h3>
+                        <BarChart data={{
+                            labels: this.state.ageLabels, datasets: [{
+                                label: 'Age',
+                                data: this.state.ageNums
+                            }]
+                        }}/>
+                    </Col>
+
                 </Row>
             </Grid>
         );
