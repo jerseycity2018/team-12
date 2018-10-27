@@ -4,7 +4,7 @@
     height: 80px;
     background: #ffffff;
   }
-  
+
   .header h1 {
     position: relative;
     top: 18px;
@@ -30,4 +30,8 @@ body {
 
 .leaflet-container {
     height: 600px;
+}
+
+.active {
+  background-color: #ffffff70;
 }
