@@ -108,40 +108,8 @@ router.get('/dateNYC', function (req, res, next) {
     Survey.find({}).then(function (users) {
 
 
-        let January = 0;
-        let JanuaryFirst = 0;
-
-        let February = 0;
-        let FebruaryFirst = 0;
-
-        let March = 0;
-        let MarchFirst = 0;
-
-        let April = 0;
-        let AprilFirst = 0;
-
-        let May = 0;
-        let MayFirst = 0;
-
-        let June = 0;
-        let JuneFirst = 0;
-
-        let August = 0;
-        let AugustFirst = 0;
-
-        let September = 0;
-        let SeptemberFirst = 0;
-
-        let November = 0;
-        let NovemberFirst = 0;
-
-        let December = 0;
-        let DecemberFirst = 0;
-
-
         const arrNYC= [];
         const arrNot = [];
-
 
         users.forEach((user) => {
 
@@ -166,14 +134,50 @@ router.get('/dateNYC', function (req, res, next) {
                 arrNot[tempNum]++;
 
             }
-
-
-    });
+        });
         res.send({
             arrNYC,
             arrNot
         });
+    });
 });
+
+router.get('/firstNYC', function (req, res, next) {
+    Survey.find({}).then(function (users) {
+
+
+        const arrFirst= [];
+        const arrExperienced = [];
+
+        users.forEach((user) => {
+
+            var tempBoolean = user.firstTime;
+            var tempNum = user.date.getMonth();
+            console.log(tempNum);
+            console.log(user.date);
+
+            if (tempBoolean){
+
+
+                if (arrFirst[tempNum] === undefined) {
+                    arrFirst[tempNum] = 0;
+                }
+                arrFirst[tempNum]++;
+
+            } else {
+
+                if (arrExperienced[tempNum] === undefined) {
+                    arrExperienced[tempNum] = 0;
+                }
+                arrExperienced[tempNum]++;
+
+            }
+        });
+        res.send({
+            arrFirst,
+            arrExperienced
+        });
+    });
 });
 
 router.get('/heat', function (req, res, next) {

@@ -18,7 +18,10 @@ const PolarAreaChart = require("react-chartjs").PolarArea;
         partData: [],
         activityDate: [],
         dateNYCdata: [],
-        dataNotdata: []
+        dataNotdata: [],
+        dataArrFirst: [],
+        dataArrExperienced: []
+
     };
 
     componentDidMount() {
@@ -123,6 +126,22 @@ const PolarAreaChart = require("react-chartjs").PolarArea;
 
             })
         });
+
+        axios.get('http://localhost:3001/analytics/firstNYC').then((res) => {
+
+            const arrFirst = res.data.arrFirst;
+            const arrExperienced = res.data.arrExperienced;
+
+            //console.log(arrNYC);
+
+            this.setState({
+                dataArrFirst: arrFirst,
+                dataArrExperienced: arrExperienced
+
+            })
+        });
+
+
     }
 
     render() {
@@ -163,10 +182,26 @@ const PolarAreaChart = require("react-chartjs").PolarArea;
                                 data: this.state.dateNYCdata
                             },
                                 {
-                                    color: "#e8c3b9",
+                                    fillColor: "rgba(220,220,220,0.5)",
                                     label: 'Does Not Live In NYC',
                                     data: this.state.dataNotdata
                             }]
+                        }}/>
+                    </Col>
+                </Row>
+                <Row>
+                    <Col className={'text-center'}sm={12}>
+                        <h3 >First Time vs Not First Time Use of Central Park</h3>
+                        <BarChart style= {{marginLeft: 0}} redraw options={{responsive:true}} data={{
+                            labels: ["January", "Feb", "March" , "April", "May", "June", "July", "August", "Sept", "Oct", "Nov", "Dec"], datasets: [{
+                                label: 'First Time in Park',
+                                data: this.state.dataArrFirst
+                            },
+                                {
+                                    fillColor: "rgba(220,220,220,0.5)",
+                                    label: 'Not First Time in park',
+                                    data: this.state.dataArrExperienced
+                                }]
                         }}/>
                     </Col>
                 </Row>
