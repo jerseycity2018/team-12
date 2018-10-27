@@ -4,11 +4,15 @@ import axios from 'axios';
 
 import {Pie, Bar, Doughnut, Polar} from 'react-chartjs-2';
 
+
+
 class Analytics extends PureComponent {
     state = {
         genderData: {
             datasets: [{
-                data: []
+                data: [],
+                backgroundColor : [
+                    "red", "green"],
             }],
             labels: []
         },
@@ -17,13 +21,17 @@ class Analytics extends PureComponent {
         ageData: [],
         partData: {
             datasets: [{
-                data: []
-            }],
+                data: [],
+                backgroundColor : [
+                    "blue", "green","white", "grey"],
+        }],
             labels: []
         },
         activityDate: {
             datasets: [{
-                data: []
+                data: [],
+                backgroundColor : [
+                    "#138D75", "#21618C","#154360", "#4A235A"],
             }],
             labels: []
         },
@@ -32,6 +40,8 @@ class Analytics extends PureComponent {
     };
 
     componentDidMount() {
+       // Chart.defaults.global.defaultColor = CanvasRenderingContext2D.createLinearGradient()
+
         axios.get('http://localhost:3001/analytics/gender').then((res) => {
             const males = res.data.males;
             const females = res.data.females;
@@ -57,6 +67,7 @@ class Analytics extends PureComponent {
             });
 
             this.setState({
+                backgroundColor: "green",
                 ageLabels,
                 ageNums
             });
@@ -79,7 +90,8 @@ class Analytics extends PureComponent {
                                 south,
                                 east,
                                 west
-                            ]
+                            ],
+
                         }],
                     labels: ['North', 'South', 'East', 'West']
                 }
@@ -97,7 +109,9 @@ class Analytics extends PureComponent {
 
             this.setState({
                 borderColor: "#8e5ea2",
-                activityDate: {datasets: [{data:[ walking, sports, leisure, eat]}],
+                activityDate: {datasets: [
+                    {data:[ walking, sports, leisure, eat],
+                    }],
                 labels: ['Walking', 'Sports', 'Leisure', 'Eat']}
 
             });
@@ -113,7 +127,8 @@ class Analytics extends PureComponent {
 
             this.setState({
                 dataNotdata: arrNot,
-                dateNYCdata: arrNYC
+                dateNYCdata: arrNYC,
+
 
             })
         });
@@ -127,8 +142,8 @@ class Analytics extends PureComponent {
 
             this.setState({
                 dataArrFirst: arrFirst,
-                dataArrExperienced: arrExperienced
-
+                dataArrExperienced: arrExperienced,
+                backgroundColor : ["#FAE5D3", "#154360"]
             })
         });
 
@@ -149,7 +164,8 @@ class Analytics extends PureComponent {
                         <Bar options={{responsive: true}} data={{
                             labels: this.state.ageLabels, datasets: [{
                                 label: 'Age',
-                                data: this.state.ageNums
+                                data: this.state.ageNums,
+                                backgroundColor: ["#2980B9","#2980B9","#2980B9","#2980B9","#2980B9","#2980B9","#2980B9","#2980B9","#2980B9","#2980B9","#2980B9","#2980B9"]
                             }]
                         }}/>
                     </Col>
@@ -171,10 +187,12 @@ class Analytics extends PureComponent {
                             labels: ["January", "Feb", "March", "April", "May", "June", "July", "August", "Sept", "Oct", "Nov", "Dec"],
                             datasets: [{
                                 label: 'Live In NYC',
-                                data: this.state.dateNYCdata
+                                data: this.state.dateNYCdata,
+                                backgroundColor:["#7FB3D5","#7FB3D5","#7FB3D5","#7FB3D5","#7FB3D5","#7FB3D5","#7FB3D5","#7FB3D5","#7FB3D5","#7FB3D5","#7FB3D5","#7FB3D5"]
+
                             },
                                 {
-                                    fillColor: "rgba(220,220,220,0.5)",
+                                    backgroundColor: ["#5B2C6F","#5B2C6F","#5B2C6F","#5B2C6F","#5B2C6F","#5B2C6F","#5B2C6F","#5B2C6F","#5B2C6F","#5B2C6F","#5B2C6F","#5B2C6F"],
                                     label: 'Does Not Live In NYC',
                                     data: this.state.dataNotdata
                             }]
@@ -187,10 +205,13 @@ class Analytics extends PureComponent {
                         <Bar style= {{marginLeft: 0}} redraw options={{responsive:true}} data={{
                             labels: ["January", "Feb", "March" , "April", "May", "June", "July", "August", "Sept", "Oct", "Nov", "Dec"], datasets: [{
                                 label: 'First Time in Park',
-                                data: this.state.dataArrFirst
+                                data: this.state.dataArrFirst,
+                                backgroundColor : [
+                                    "#AAB7B8","#AAB7B8","#AAB7B8","#AAB7B8","#AAB7B8","#AAB7B8","#AAB7B8","#AAB7B8","#AAB7B8","#AAB7B8","#AAB7B8","#AAB7B8"]
                             },
                                 {
-                                    fillColor: "rgba(220,220,220,0.5)",
+                                    backgroundColor : [
+                                       "#17202A","#17202A","#17202A","#17202A","#17202A","#17202A","#17202A","#17202A","#17202A","#17202A","#17202A","#17202A"],
                                     label: 'Not First Time in park',
                                     data: this.state.dataArrExperienced
                                 }]
