@@ -25,6 +25,7 @@ class Main extends Component {
             <Route exact path='/' component={Home}/>
             <Route path='/experiences' component={Experiences}/>
             <Route path='/donate' component={Donate}/>
+
           </div>
         </div>
         </HashRouter>
