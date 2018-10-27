@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import Form from './Form.js'
 class Donate extends Component {
     render() {
         return (
@@ -65,6 +66,15 @@ class Donate extends Component {
                         <input type="submit" value="Submit" />
                     </form>
                     </div>
+                    <Form questionText = "First Name:" name = "fname"/>
+                      <Form questionText = "Last Name:" name = "lname"/>
+                        <Form questionText = "Donation Amount:" name = "fname"/>
+                          <p>Please enter your credit card information in the following section.</p>
+                          <Form questionText = "Name on Card:" name = "cname"/>
+                            <Form questionText = "Card Number:" name = "cnum"/>
+                              <Form questionText = "CVC:" name = "cvc"/>
+                                <Form questionText = "Expiration Date:" name = "expdate"/>
+                        <input type="submit" value="Submit" />
                     <a
                         className="App-link"
                         href="https://reactjs.org"

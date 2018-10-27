@@ -45,5 +45,32 @@ router.get('/age', function (req, res, next) {
         res.send(agesArray);
     });
 });
+router.get('/part', function (req, res, next) {
+    Survey.find({}).then(function (users) {
+        let north = 0;
+        let south = 0;
+        let east = 0;
+        let west = 0;
+
+        users.forEach((user) => {
+            if (user.part === 'north') {
+                north++;
+            } else if (user.part === 'south'){
+                south++;
+            } else if (user.part === 'east'){
+                east++;
+            } else {
+                west++;
+            }
+        });
+
+        res.send({
+            north,
+            south,
+            east,
+            west
+        });
+    });
+});
 
 module.exports = router;
