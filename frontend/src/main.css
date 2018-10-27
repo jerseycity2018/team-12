@@ -4,7 +4,7 @@
     height: 80px;
     background: #ffffff;
   }
-  
+
   .header h1 {
     position: relative;
     top: 18px;
@@ -32,12 +32,6 @@ body {
     height: 600px;
 }
 
-form{
-    padding: 10px;
-    font-size: 16px;
-    font-weight: bold;
-}
-
-ul li{
-    padding-right: 5px;
+.active {
+  background-color: #ffffff70;
 }
