@@ -9,6 +9,8 @@ class Custom extends Component {
     return (
       <div>
         HELLO {this.props.myName}
+
+      
       </div>
     );
   }
