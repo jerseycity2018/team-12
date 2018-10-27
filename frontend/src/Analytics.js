@@ -2,21 +2,31 @@ import React, {PureComponent} from 'react';
 import {Col, Grid, Row} from 'react-bootstrap';
 import axios from 'axios';
 
-const PieChart = require("react-chartjs").Pie;
-const BarChart = require("react-chartjs").Bar;
-const DoughnutChart = require("react-chartjs").Doughnut;
-const PolarAreaChart = require("react-chartjs").PolarArea;
+import {Pie, Bar, Doughnut, Polar} from 'react-chartjs-2';
 
-
-
-    class Analytics extends PureComponent {
+class Analytics extends PureComponent {
     state = {
-        genderData: [],
+        genderData: {
+            datasets: [{
+                data: []
+            }],
+            labels: []
+        },
         ageLabels: [],
         ageNums: [],
         ageData: [],
-        partData: [],
-        activityDate: [],
+        partData: {
+            datasets: [{
+                data: []
+            }],
+            labels: []
+        },
+        activityDate: {
+            datasets: [{
+                data: []
+            }],
+            labels: []
+        },
         dateNYCdata: [],
         dataNotdata: []
     };
@@ -27,13 +37,12 @@ const PolarAreaChart = require("react-chartjs").PolarArea;
             const females = res.data.females;
 
             this.setState({
-                genderData: [{
-                    value: males,
-                    label: 'Males'
-                }, {
-                    value: females,
-                    label: 'Females'
-                }]
+                genderData: {
+                    datasets: [{
+                        data: [males, females]
+                    }],
+                    labels: ['Males', 'Females']
+                }
             });
         });
         axios.get('http://localhost:3001/analytics/age').then((res) => {
@@ -62,20 +71,19 @@ const PolarAreaChart = require("react-chartjs").PolarArea;
 
 
             this.setState({
-                    partData: [{
-                        value: north,
-                        label: 'North'
-                    }, {
-                        value: south,
-                        label: 'South'
-                    }, {
-                        value: east,
-                        label: 'East'
-                    }, {
-                        value: west,
-                        label: 'West'
-                    }]
-                });
+                partData: {
+                    datasets:
+                        [{
+                            data: [
+                                north,
+                                south,
+                                east,
+                                west
+                            ]
+                        }],
+                    labels: ['North', 'South', 'East', 'West']
+                }
+            });
         });
 
 
@@ -89,23 +97,9 @@ const PolarAreaChart = require("react-chartjs").PolarArea;
 
             this.setState({
                 borderColor: "#8e5ea2",
-                activityDate: [{
-                    value: walking,
-                    label: 'Walking',
-                    Color: "#8e5ea2"
-                }, {
-                    value: sports,
-                    label: 'Sports',
-                    backgroundColorHover: "#3e95cd"
-                }, {
-                    value: leisure,
-                    label: 'Leisure',
-                    backgroundColorHover: "#3cba9f"
-                }, {
-                    value: eat,
-                    label: 'Eat',
-                    backgroundColorHover: "#e8c3b9"
-                }]
+                activityDate: {datasets: [{data:[ walking, sports, leisure, eat]}],
+                labels: ['Walking', 'Sports', 'Leisure', 'Eat']}
+
             });
         });
 
@@ -130,13 +124,13 @@ const PolarAreaChart = require("react-chartjs").PolarArea;
             <Grid>
                 <Row>
                     <Col className={'text-center'} sm={6}>
-                        <h3 >Gender Demographics</h3>
-                        <PieChart data={this.state.genderData} options={{responsive:true}}/>
+                        <h3>Gender Demographics</h3>
+                        <Pie data={this.state.genderData} options={{responsive: true}}/>
                     </Col>
 
                     <Col className={'text-center'} sm={6}>
-                        <h3 >Age Demographics</h3>
-                        <BarChart options={{responsive:true}} data={{
+                        <h3>Age Demographics</h3>
+                        <Bar options={{responsive: true}} data={{
                             labels: this.state.ageLabels, datasets: [{
                                 label: 'Age',
                                 data: this.state.ageNums
@@ -147,26 +141,26 @@ const PolarAreaChart = require("react-chartjs").PolarArea;
                 <Row>
                     <Col className={'text-center'} sm={6}>
                         <h3 className={'text-center'}>Activity Demographics</h3>
-                        <PolarAreaChart data={this.state.activityDate} options={{responsive:true}} />
+                        <Polar data={this.state.activityDate} options={{responsive: true}}/>
                     </Col>
                     <Col className={'text-center'} md={6}>
                         <h3 className={'text-center'}>Location Demographics</h3>
-                        <DoughnutChart data={this.state.partData} options={{responsive:true}}/>
+                        <Doughnut data={this.state.partData} options={{responsive: true}}/>
                     </Col>
                 </Row>
                 <Row>
-                    <Col className={'text-center'}sm={12}>
-                        <h3 >Park usage of tourist vs. residents</h3>
-                        <BarChart style= {{marginLeft: 0}} redraw options={{responsive:true}} data={{
-                            labels: ["January", "Feb", "March" , "April", "May", "June", "July", "August", "Sept", "Oct", "Nov", "Dec"], datasets: [{
+                    <Col className={'text-center'} sm={12}>
+                        <h3>Park usage of tourist vs. residents</h3>
+                        <Bar style={{marginLeft: 0}} redraw options={{responsive: true}} data={{
+                            labels: ["January", "Feb", "March", "April", "May", "June", "July", "August", "Sept", "Oct", "Nov", "Dec"],
+                            datasets: [{
                                 label: 'Live In NYC',
                                 data: this.state.dateNYCdata
                             },
                                 {
-                                    color: "#e8c3b9",
                                     label: 'Does Not Live In NYC',
                                     data: this.state.dataNotdata
-                            }]
+                                }]
                         }}/>
                     </Col>
                 </Row>

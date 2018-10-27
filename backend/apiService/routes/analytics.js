@@ -147,8 +147,6 @@ router.get('/dateNYC', function (req, res, next) {
 
             var tempBoolean = user.outOfState;
             var tempNum = user.date.getMonth();
-            console.log(tempNum);
-            console.log(user.date);
 
             if (tempBoolean){
 
