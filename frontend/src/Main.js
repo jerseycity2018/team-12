@@ -13,7 +13,7 @@ import Donate from "./Donate";
 class Main extends Component {
   render() {
     return (
-      <Navbar>
+     [ <Navbar>
         <Navbar.Header>
           <Navbar.Brand>
             Central Park Conservancy
@@ -30,7 +30,7 @@ class Main extends Component {
             Map
           </NavItem>
         </Nav>
-      </Navbar>
+      </Navbar>, 
       <HashRouter>
         <div>
            <h1>Visit Central Park!</h1>
@@ -46,7 +46,7 @@ class Main extends Component {
 
           </div>
         </div>
-        </HashRouter>
+     </HashRouter> ]
     );
   }
 }
