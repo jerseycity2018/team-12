@@ -17,21 +17,35 @@ class Donate extends Component {
           </p>
           <form>
             <label>
-              Full Legal Name:
-              <input type="text" name="name" />
+              First Name:
+              <input type="text" name="fname" />
             </label>
             <input type="submit" value="Submit" />
-            </form>
+          </form>
+          <form>
+            <label>
+              Last Name:
+              <input type="text" name="lname" />
+            </label>
+            <input type="submit" value="Submit" />
+          </form>
+          <form>
+            <label>
+              Donation Amount:
+              <input type="text" name="amt" />
+            </label>
+            <input type="submit" value="Submit" />
+          </form>
+          
           <a
             className="App-link"
             href="https://reactjs.org"
             target="_blank"
             rel="noopener noreferrer"
           >
-            Learn React
-          </a>
-          <Custom myName="John"/>
+       </a>
         </header>
+
       </div>
     );
   }
