@@ -20,7 +20,7 @@ class Main extends Component {
             <li><NavLink to="/donate">Donate</NavLink></li>
           </ul>
           <div className="content">
-            <Route path='/' component={Home}/>
+            <Route exact path='/' component={Home}/>
             <Route path='/experiences' component={Experiences}/>
             <Route path='/donate' component={Donate}/>
           </div>
