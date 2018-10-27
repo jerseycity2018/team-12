@@ -4,7 +4,6 @@ var MongoClient = require('mongodb').MongoClient;
 
 const mongoose = require('mongoose');
 const Survey = mongoose.model('survey');
-mongoose.connect("mongodb://35.170.187.47:27017/survey");
 
 router.route('/').post(function(req,res,next) {
 

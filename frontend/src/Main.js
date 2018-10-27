@@ -40,6 +40,8 @@ class Main extends Component {
             <li><NavLink to="/">Home</NavLink></li>
             <li><NavLink to="/experiences">Experiences</NavLink></li>
             <li><NavLink to="/donate">Donate</NavLink></li>
+            <li><NavLink to="/analytics">Analytics</NavLink></li>
+
           </ul>
           <div className="content">
             <Route exact path='/' component={Home}/>

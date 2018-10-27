@@ -10,7 +10,6 @@ var MongoClient = require('mongodb').MongoClient;
 
 const mongoose = require('mongoose');
 const User = mongoose.model('user');
-mongoose.connect("mongodb://35.170.187.47:27017/test");
 
 router.route('/').post(function(req,res,next) {
 

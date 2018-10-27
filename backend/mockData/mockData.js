@@ -1,42 +1,40 @@
 const mongoose = require('mongoose');
-mongoose.connect('mongodb://35.170.187.47:27017/test');
+mongoose.connect('mongodb://35.170.187.47:27017/survey');
 
-const User = mongoose.model('user', {
-    firstName: String,
-    lastName: String,
-    gender: String,
+const Survey =  mongoose.model('survey', {
     age: Number,
-    location: {lat: Number, long: Number}
+    gender: String,
+    outOfState: Boolean,
+    activity: String,
+    firstTime: Boolean,
+    part: String
 });
-
-const faker = require('faker');
 const d3 = require("d3-random");
-const randomAge = d3.randomNormal(20, 10);
+const randomAge = d3.randomNormal(20, 5);
+const randomGender = d3.randomNormal();
+const randomActivity = d3.randomNormal(3, 10);
 
-const upperX = 40.796388;
-const upperY = -73.950406;
-const lowerX = 40.768123;
-const lowerY = -73.981666;
-const xDiff = (upperX - lowerX) * 1000000;
-const yDiff = (upperY - lowerY) * 1000000;
+const activities = ['walking', 'leisure', 'sports', 'eat'];
+const parts = ['north', 'south', 'east', 'west'];
 
-for (let i = 0; i < 20000; i++) {
-    let gender = Math.floor(Math.random() * 2);
-    const firstName = faker.name.firstName(gender);
-    const lastName = faker.name.lastName(gender);
-    const age = Math.abs(Math.floor(randomAge()));
+for (let i = 0; i < 1000; i++) {
+    let gender = Math.abs(Math.floor(randomGender())) % 2;
     gender = gender === 0 ? 'male' : 'female';
-    const lat = lowerX + (Math.random() * xDiff / 1000000);
-    const long = lowerY + (Math.random() * yDiff / 1000000);
 
-    const user = new User({
-        firstName,
-        lastName,
-        age,
+    const age = Math.abs(Math.floor(randomAge()));
+    const outOfState = Math.abs(Math.floor(randomGender())) % 2 === 0;
+    const activity = activities[Math.abs(Math.floor(randomActivity())) % 4];
+    const firstTime = Math.abs(Math.floor(randomGender())) % 2 === 0;
+    const part = parts[Math.abs(Math.floor(randomActivity())) % 4];
+
+    const survey = new Survey({
         gender,
-        location: {
-            lat, long
-        }
+        age,
+        outOfState,
+        activity,
+        firstTime,
+        part
     });
-    user.save().then(() => console.log(i));
+
+    survey.save().then(() => console.log(i));
 }

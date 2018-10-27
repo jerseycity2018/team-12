@@ -1,4 +1,6 @@
 const mongoose = require('mongoose');
+mongoose.connect("mongodb://35.170.187.47:27017/survey");
+
 const User = mongoose.model('user', {
     firstName: String,
     lastName: String,
@@ -8,9 +10,10 @@ const User = mongoose.model('user', {
 });
 
 const Survey =  mongoose.model('survey', {
+    age: Number,
     gender: String,
-    outOfState: String,
+    outOfState: Boolean,
     activity: String,
-    firstTime: String,
+    firstTime: Boolean,
     part: String
 });
