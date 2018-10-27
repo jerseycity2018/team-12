@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { BrowserRouter as Router } from 'react-router-dom';
+import { Navbar, Nav, NavItem } from 'react-bootstrap';
 import './main.css';
 import {
   Route,
@@ -9,50 +10,39 @@ import {
 import Home from "./Home";
 import Experiences from "./Experiences";
 import Donate from "./Donate";
-import Analytics from "./Analytics";
-import {Nav, Navbar, NavItem} from "react-bootstrap";
 
 class Main extends Component {
   render() {
     return (
      [ <Navbar>
         <Navbar.Header>
-          <Navbar.Brand>
-            Central Park Conservancy
+          <Navbar.Brand >
+            <a href="#"><h3>Welcome to Central Park Conservancy!</h3></a>
           </Navbar.Brand>
         </Navbar.Header>
         <Nav>
-          <NavItem>
+          <NavItem eventKey={1} href="#/experiences/">
             Experience
           </NavItem>
-          <NavItem>
+          <NavItem eventKey={2} href="#/donate/">
             Donate
           </NavItem>
           <NavItem>
-            Mapnpm
+            Map
           </NavItem>
         </Nav>
-      </Navbar>,
+      </Navbar>, 
       <HashRouter>
         <div>
-           <h1>Visit Central Park!</h1>
-          <ul className="header">
-            <li><NavLink to="/">Home</NavLink></li>
-            <li><NavLink to="/experiences">Experiences</NavLink></li>
-            <li><NavLink to="/donate">Donate</NavLink></li>
-            <li><NavLink to="/analytics">Analytics</NavLink></li>
-
-          </ul>
           <div className="content">
             <Route exact path='/' component={Home}/>
             <Route path='/experiences' component={Experiences}/>
             <Route path='/donate' component={Donate}/>
-            <Route path='/analytics' component={Analytics}/>
 
           </div>
         </div>
-        </HashRouter>
-    ]);
+     </HashRouter> ]
+    );
   }
 }
 
