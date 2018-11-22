@@ -1,0 +1,48 @@
+
+#experiences ul {
+  list-style-type: none;
+  width: 100%;
+}
+
+* {
+  font-family: Helvetica, Verdana, sans-serif !important;
+}
+#experiences li{
+  display: flex;
+}
+#experiences div.left{
+  width: 60%;
+}
+#experiences div.right{
+  width:30%;
+  float: right;
+}
+
+#experiences li img {
+  float: left;
+  margin: 0 10px 0 0;
+}
+
+#experiences li p {
+  font: 200 1em Georgia, Times New Roman, serif;
+}
+
+#experiences li {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  overflow: auto;
+}
+
+#experiences li:hover {
+  background: #eee;
+  cursor: pointer;
+}
+#experiences img{
+  width: 30%;
+    height: 30%;
+  /* width:150px; */
+}
+
+#experiences p{
+  font-size: 12px;
+}

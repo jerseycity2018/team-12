@@ -1,0 +1,12 @@
+.question-ul li {
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.question-ul input {
+  margin-right: 5px;
+}
+
+.question-ul {
+  margin-left: -50px;
+}
